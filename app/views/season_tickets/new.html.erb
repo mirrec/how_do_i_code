@@ -1,0 +1,30 @@
+<%
+   @seo.title! t("player_menu.new_season_ticket")
+%>
+<div class="well clearfix">
+  <div class="page-header">
+    <h1>League request</h1>
+  </div>
+
+  <%= simple_form_for(@season_ticket) do |f| %>
+    <fieldset>
+      <%= f.input :sport_id, :collection => @sports, :required => true %>
+      <div class="region-wrapper">
+        <%= f.input :sport_region_id,
+                    :as                 => :grouped_select,
+                    :collection         => @sports,
+                    :group_method       => :sport_regions_with_city,
+                    :group_label_method => :name,
+                    :label_method       => :city_name,
+                    :value_method       => :id,
+                    :label              => t("simple_form.labels.season_ticket.city_id") %>
+        <%= f.input :expected_level, :collection => ExpectedLevel.all.sort_by{ |a| a.id }.map { |c| [c.name, c.id] } %>
+      </div>
+    </fieldset>
+    <%= f.submit t("simple_form.labels.season_ticket.order"), :class => "btn btn-primary btn-large", :id => "order" %>
+  <% end %>
+</div>
+
+<% left_banner do %>
+  <%= render :partial => "layouts/default_left_banner" %>
+<% end %>

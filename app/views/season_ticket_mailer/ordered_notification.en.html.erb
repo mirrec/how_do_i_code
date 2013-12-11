@@ -1,0 +1,22 @@
+<p>
+  Dear <%= @player.firstname %> <%= @player.surname %>.
+</p>
+<p>
+  We have received your league request<br/>
+  <strong>Sport:</strong> <%= @ticket.sport_name %><br/>
+  <strong>City:</strong> <%= @ticket.city_name %>
+</p>
+<p>
+  League acceptance fee: <strong><%= number_to_currency @ticket.price %></strong><br/>
+</p>
+<p>
+  <strong>Bank account:</strong> 2629116325 / 1100 (Tatrabanka a.s.)<br/>
+  <strong>Payment identifier:</strong> <%= @ticket.payment_identifier %>
+</p>
+<p>
+  <strong>Due date for this league request <%= l @ticket.due_date %>.</strong>
+</p>
+
+<%= Wnm::Core.mail_noreply %>
+
+<%= Wnm::Core.mail_signature_html %>

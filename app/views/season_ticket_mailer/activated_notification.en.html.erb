@@ -1,0 +1,14 @@
+<p>
+  Dear <%= @player.firstname %> <%= @player.surname %>.
+</p>
+<p>
+  Thank you for your payment. Your league request is confirmed<br/>
+  <strong>Sport:</strong> <%= @ticket.sport_name %><br/>
+  <strong>City:</strong> <%= @ticket.city_name %>
+</p>
+
+<p>Good luck</p>
+
+<%= Wnm::Core.mail_noreply %>
+
+<%= Wnm::Core.mail_signature_html %>
