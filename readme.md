@@ -200,10 +200,11 @@ feedback in less than 0.5 :)
 * for more information just browse the source code :)
 
 ## Resources
-I did not reinvent the wheel :) so here are some good resources
+There is list of good resources that I've been inspired by
 
 * https://www.destroyallsoftware.com/screencasts
 * http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
+* http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/
 * http://www.confreaks.com/videos/1314-rubyconf2012-boundaries
 * http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
 
