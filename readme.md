@@ -1,41 +1,48 @@
-# SampleProject
-* this is small sample from our real project called Uniliga
-* sample covers player league requesting process
- * from controller, models, emails, services to view
-* tests for all objects (services, models, emails) and end to end tests
+# Sample Ruby on Rails Project
 
-## About project
-* Uniliga is a place for players of tennis, bedminton, squash, etc. who want to play but have nobody to play with
-* Player makes registration, send league request for his favourite sport
-* After paying a fee players are split to groups and leagues according to their experience and league history
+This is a small sample from a project I participated in called Uniliga. The sample covers the process of requesting a league by a player
+
+## About the Project
+
+Uniliga is a place for players of tennis, bedminton, squash, etc. who want to play but have nobody to play with.
+The overeall process is simple. After registration and paying a fee, players can apply for any the existing leagues for their favorite sport
+and be assigned to them according to their experience and league history.
+
+## Contents
+
+* controllers
+* models
+* mailers
+* services
+* views
+* tests (unit tests for services, models abd emails) and end to end tests
 
 ## How do I code
-* I try to have slim controllers and models as well
-* I put logic to pure ruby objects (services)
- * single responsibility principle
- * tell don't ask
-* ActiveRecord is only input (for reading data) and output (for storing data) with defined interface
-* I try to have all views (application, emails) very dummy and simple
 
-## How do I test
-* tests for models do load hole application
-* services are tested in isolation without rails
- * stubs, mocks
-* end to end tests (request) verify that small parts work (fit) together
+These are some guidelines I try to follow:
 
-## Why do I do it like that ?
-* lots of small objects with one responsibility are better than small objects of lot of code with a lot of responsibility
+* controllers and models are slim
+* business logic in pure Ruby objects (services), single responsibility principle, tell don't ask
+* using ActiveRecord as a persitence only layer - for input (reading data) and output (storing data) with defined interface
+* views (action views as well as e-mail templates) are very dummy and simple
+* loading the whole application when testing models and doing end-to-end tests
+* services tested in isolation without loading the application, using stubs and mocks
+* end-to-end tests (request tests) to verify that small parts work (fit) together
+
+Some gains I get from following these guidelines:
+
+* easier maintenance: lots of small objects with one responsibility are better than one big object with a lot of code and a lot of responsibility
 * better architecture
 * fewer bugs
 * interfaces (object borders) are well defined
-* it is much easier to swap some object for an other if I want change something
+* it is much easier to swap some object for another if I want to change something
 * only few request tests are needed
 * unit testing is much easier
-* tests that do not load rails are extremely fast
+* tests that do not load the whole Rails stack are extremely fast
 
 ## Example
 
-Interaction between model and service objects
+Interaction between model and service objects:
 
 ```ruby
 class SeasonTicket < ActiveRecord::Base
@@ -196,11 +203,13 @@ sys	0m0.044s
 
 feedback in less than 0.5 :)
 
-## More ?
-* for more information just browse the source code :)
+## Want to know more?
+
+For more information just browse the source code. :)
 
 ## Resources
-There is list of good resources that I've been inspired by
+
+This is a list of good resources I've been inspired by in terms of my current coding style:
 
 * https://www.destroyallsoftware.com/screencasts
 * http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
@@ -208,6 +217,15 @@ There is list of good resources that I've been inspired by
 * http://www.confreaks.com/videos/1314-rubyconf2012-boundaries
 * http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
 
-## Licence
+### General blog sources
+
+* http://sporto.github.io/
+* http://blog.steveklabnik.com/archive
+* http://pivotallabs.com/category/labs/
+* http://solnic.eu/
+* http://words.steveklabnik.com/
+* http://tx.pignata.com/
+
+## License
 
 MIT: http://rem.mit-license.org
